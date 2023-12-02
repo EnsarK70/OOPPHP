@@ -15,7 +15,21 @@ class Database {
     public function insertPlayers($a, $b, $c) {
         $sql = "INSERT INTO players VALUES (null, :naam, :achternaam, :leeftijd)";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(['naam' => $a, 'achternaam' => $b, 'leeftijd' => $c]);
+        $stmt->execute(['naam' => $a, 'achternaam' => $b, 'leeftijd' => $c]);    
+    }
+
+    public function selectPlayers($id = null) {
+        $result = null;
+
+        if ($id !== null) {
+            $stmt = $this->pdo->prepare("SELECT * FROM players WHERE id = ?");
+            $stmt->execute([$id]);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            $stmt = $this->pdo->query("SELECT * FROM players");
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $result;
     }
 }
 ?>

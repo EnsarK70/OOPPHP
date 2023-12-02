@@ -10,3 +10,4 @@ CREATE TABLE players (
 );
 
 SELECT * FROM players;
+
