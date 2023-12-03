@@ -18,18 +18,17 @@ class Database {
         $stmt->execute(['naam' => $a, 'achternaam' => $b, 'leeftijd' => $c]);    
     }
 
-    public function selectPlayers($id = null) {
-        $result = null;
-
-        if ($id !== null) {
+    public function selectPlayers() {
+        if (empty($id)) {
+            $stmt = $this->pdo->query("SELECT * FROM players");
+            $result = $stmt->fetchAll();
+            return $result;
+        } else {
             $stmt = $this->pdo->prepare("SELECT * FROM players WHERE id = ?");
             $stmt->execute([$id]);
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        } else {
-            $stmt = $this->pdo->query("SELECT * FROM players");
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $result = $stmt->fetch();
+            return $result;
         }
-        return $result;
     }
 }
 ?>
