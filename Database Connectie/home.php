@@ -36,14 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </tr>
 
         <tr>
-            <?php $players = $database->selectPlayers();
-            foreach($players as $player){ ?>
-            <td><?php echo $player['id']?></td>
-            <td><?php echo $player['naam']?></td>
-            <td><?php echo $player['achternaam']?></td>
-            <td><?php echo $player['leeftijd']?></td>
-            <td><a class="btn btn-primary" href="edit.php?id=<?php echo $player['id']; ?>">Edit</a></td>
-            <td><a class="btn btn-danger" href="delete.php?id=<?php echo $player['id']; ?>">Delete</a></td>
+            <?php $player = $database->selectPlayers();
+            foreach($player as $play){
+            ?>
+            <td><?php echo $play['id']?></td>
+            <td><?php echo $play['naam']?></td>
+            <td><?php echo $play['achternaam']?></td>
+            <td><?php echo $play['leeftijd']?></td>
+            <td><a class="btn btn-primary" href="edit.php?id=<?php echo $play['id']; ?>">Edit</a></td>
+            <td><a class="btn btn-danger" href="delete.php?id=<?php echo $play['id']; ?>">Delete</a></td>
         </tr> <?php } ?>
     </table>
 
