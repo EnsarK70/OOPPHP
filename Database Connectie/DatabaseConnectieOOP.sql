@@ -1,6 +1,6 @@
-CREATE DATABASE footballers;
+CREATE DATABASE football;
 
-USE footballers;
+USE football;
 
 CREATE TABLE players (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -10,3 +10,15 @@ CREATE TABLE players (
 );
 
 SELECT * FROM players;
+
+CREATE TABLE accounts (
+  account_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(255),
+  email VARCHAR(255), 
+  password VARCHAR(255)
+);
+
+SELECT * FROM accounts;
+
+
+

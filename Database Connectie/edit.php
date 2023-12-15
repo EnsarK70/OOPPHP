@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         <input type="text" class="form-control" name="naam" placeholder="Naam"><br><br>
         <input type="text" class="form-control" name="achternaam" placeholder="Achternaam"><br><br>
         <input type="number" class="form-control" name="leeftijd" placeholder="Leeftijd"><br><br>
-        <input type="submit" class="btn btn-primary" value="Toevoegen">
+        <input type="submit" class="btn btn-primary" value="Change">
     </form>
 </div>
 </body>
