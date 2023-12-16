@@ -22,6 +22,7 @@
 </head>
 <body>
 <div class="container">
+    <h2>Maak een account aan!</h2>
     <form method="POST">
         <input type="text" name="username" placeholder="Username"><br><br>
         <input type="email" name="email" placeholder="Email"><br><br>
